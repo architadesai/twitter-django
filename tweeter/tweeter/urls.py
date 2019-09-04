@@ -16,6 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from userprofile.views import authenticate, timeline, signout
+
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    # path('admin/', admin.site.urls),
+    path('', authenticate, name='authenticate'),
+    path('<str:username>/', timeline, name='timeline'),
+    path('logout/', signout, name='logout'),
 ]
