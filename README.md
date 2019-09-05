@@ -3,7 +3,25 @@
 ###### A mini Twitter App - built with Django.
 
 
-## Development Instructions
+## Screenshots
+
+###### Login & Registration Page
+![Login & Registration Page](readme_images/login_registration.png)
+
+###### Tweeter timeline
+![Tweeter timeline](readme_images/tweet_timeline2.png)
+
+
+## Features
+- Login using Django Authentication.
+- Signup to create a user.
+- User can post a tweet. (140 char limit).
+- User can see the timeline of tweets created by them.
+- Logged in user can see tweets from other users
+    - Example: To see `joey`'s timeline, go to `localhost:8000/joey`
+
+
+## For Developers
 
 ### Installation Instructions
 - Run following commands after cloning the repository
@@ -35,9 +53,3 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-## Screenshots
-###### Login & Registration Page
-![Login & Registration Page](readme_images/login_registration.png)
-
-###### Tweeter timeline
-![Tweeter timeline](readme_images/tweet_timeline2.png)
