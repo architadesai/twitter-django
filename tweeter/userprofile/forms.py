@@ -16,21 +16,15 @@ class RegistrationForm(UserCreationForm):
                              widget=forms.widgets.TextInput(attrs={
                                  'placeholder': 'Email', 'class': 'form-control'
                              }))
-    username = forms.CharField(required=True,
-                               widget=forms.widgets.TextInput(attrs={
-                                   'placeholder': 'Username', 'class': 'form-control'
-                               }))
-    password = forms.CharField(required=True,
-                               widget=forms.widgets.PasswordInput(attrs={
-                                    'placeholder': 'Password', 'class': 'form-control'
-                               }))
-    re_password = forms.CharField(required=True,
-                                  widget=forms.widgets.PasswordInput(attrs={
-                                    'placeholder': 'Password Confirmation', 'class': 'form-control'
-                                  }))
+    username = forms.CharField(
+        widget=forms.widgets.TextInput(attrs={'placeholder': 'Username', 'class': 'form-control'}))
+    password1 = forms.CharField(
+        widget=forms.widgets.PasswordInput(attrs={'placeholder': 'Password', 'class': 'form-control'}))
+    password2 = forms.CharField(
+        widget=forms.widgets.PasswordInput(attrs={'placeholder': 'Password Confirmation', 'class': 'form-control'}))
 
     class Meta:
-        fields = ['first_name', 'last_name', 'email', 'username', 'password', 're_password']
+        fields = ['email', 'username', 'first_name', 'last_name', 'password1', 'password2']
         model = User
 
 

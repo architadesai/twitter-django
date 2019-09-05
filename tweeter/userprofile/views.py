@@ -8,7 +8,7 @@ from tweet.forms import AddTweetForm
 from userprofile.forms import LogInForm, RegistrationForm
 
 
-def authenticate(request):
+def authenticateuser(request):
     if request.user.is_authenticated:
         return render(request, 'userprofile.html')
     else:
@@ -19,7 +19,7 @@ def authenticate(request):
 
                 if registrationform.is_valid():
                     username = registrationform.cleaned_data['username']
-                    password = registrationform.cleaned_data['password']
+                    password = registrationform.cleaned_data['password1']
                     registrationform.save()
                     user = authenticate(username=username, password=password)
                     # LogIn user as soon as registered
@@ -37,6 +37,11 @@ def authenticate(request):
             loginform = LogInForm()
 
         return render(request, 'authentication.html', {'registrationform': registrationform, 'loginform': loginform})
+
+
+def signout(request):
+    logout(request)
+    return redirect('/')
 
 
 def timeline(request, username):
@@ -60,10 +65,3 @@ def timeline(request, username):
         return render(request, 'userprofile.html', {'form': form, 'user': user})
     else:
         return redirect('/')
-
-
-def signout(request):
-    logout(request)
-    return redirect('/')
-
-
