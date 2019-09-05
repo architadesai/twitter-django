@@ -16,12 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from userprofile.views import authenticateuser, timeline, signout
+from userprofile.views import authenticateuser, timeline, signout, alltweets
 
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
     path('', authenticateuser, name='authenticate'),
     path('logout/', signout, name='logout'),
+    path('alltweets/', alltweets, name='alltweets'),
     path('<str:username>/', timeline, name='timeline'),
 ]

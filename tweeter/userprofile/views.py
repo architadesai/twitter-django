@@ -5,6 +5,7 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.models import User
 
 from tweet.forms import AddTweetForm
+from tweet.models import Tweet
 from userprofile.forms import LogInForm, RegistrationForm
 
 
@@ -42,6 +43,13 @@ def authenticateuser(request):
 def signout(request):
     logout(request)
     return redirect('/')
+
+
+def alltweets(request):
+    if request.user.is_authenticated:
+        tweets = Tweet.objects.all()
+        print("tweets are : ", tweets)
+        return render(request, 'alltweets.html', {'tweets': tweets})
 
 
 def timeline(request, username):

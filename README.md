@@ -8,18 +8,21 @@
 ###### Login & Registration Page
 ![Login & Registration Page](readme_images/login_registration.png)
 
-###### Tweeter timeline
-![Tweeter timeline](readme_images/tweet_timeline2.png)
+###### Tweeter timeline of Phoebe (logged in)
+![Tweeter timeline](readme_images/user_tweets_timeline.png)
+
+###### View Tweets Across the Globe
+![All Tweets](readme_images/alltweets.png)
 
 
 ## Features
 - Login using Django Authentication.
 - Signup to create a user.
-- User can post a tweet. (140 char limit).
-- User can see the timeline of tweets created by them.
+- Logged in user can post a tweet. (140 char limit).
+- Logged in user can see the timeline of tweets created by them.
 - Logged in user can see tweets from other users
     - Example: To see `joey`'s timeline, go to `localhost:8000/joey`
-
+- Logged in user can see the tweets across the globe.
 
 ## For Developers
 
